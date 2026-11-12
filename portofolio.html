@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Babu Karri | Freelance Web Developer in Visakhapatnam</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            950: '#070B19',
+                            900: '#0B1120',
+                            800: '#111936',
+                            700: '#1E293B'
+                        },
+                        brand: {
+                            DEFAULT: '#4F46E5',
+                            hover: '#4338CA',
+                            soft: '#EEF2FF'
+                        },
+                        emerald: {
+                            DEFAULT: '#10B981',
+                            dark: '#059669'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F8FAFC;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94A3B8;
+        }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .card-lift {
+            transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+        }
+        .card-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.12);
+        }
+        .hero-grid-bg {
+            background-image: radial-gradient(rgba(99, 102, 241, 0.18) 1px, transparent 1px);
+            background-size: 28px 28px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-brand selection:text-white">
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-none flex flex-col gap-2 w-11/12 max-w-md"></div>
+
+    <!-- Sticky Navigation Header -->
+    <header class="sticky top-0 z-40 glass-header border-b border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Identity -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-2xl bg-navy-900 text-white flex items-center justify-center font-display font-extrabold text-lg shadow-md group-hover:bg-brand transition-colors">
+                        SB
+                    </div>
+                    <div>
+                        <span class="font-display font-bold text-lg sm:text-xl text-slate-900 block leading-none">
+                            Sai Babu Karri
+                        </span>
+                        <span class="text-xs font-medium text-brand block mt-1">
+                            Web Developer · Visakhapatnam
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                    <a href="#why-me" class="hover:text-brand transition-colors py-2">Why Work With Me</a>
+                    <a href="#portfolio" class="hover:text-brand transition-colors py-2">Live Demos</a>
+                    <a href="#packages" class="hover:text-brand transition-colors py-2">Packages</a>
+                    <a href="#process" class="hover:text-brand transition-colors py-2">Process</a>
+                    <a href="#contact" class="hover:text-brand transition-colors py-2">Contact</a>
+                </nav>
+
+                <!-- Action CTAs -->
+                <div class="flex items-center gap-2.5 sm:gap-3">
+                    <a href="https://wa.me/919347567746?text=Hi%20Sai%20Babu%2C%20I%20would%20like%20to%20discuss%20a%20website%20for%20my%20business." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-emerald hover:bg-emerald-dark text-white font-semibold text-xs sm:text-sm px-4 py-2.5 sm:py-3 rounded-xl shadow-sm transition-all">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                        <span class="hidden sm:inline">Chat on WhatsApp</span>
+                        <span class="sm:hidden">WhatsApp</span>
+                    </a>
+                    <a href="#contact" class="hidden lg:inline-flex items-center gap-2 bg-navy-900 hover:bg-brand text-white font-semibold text-sm px-5 py-3 rounded-xl shadow-sm transition-all">
+                        <span>Book Free Consultation</span>
+                    </a>
+                    <!-- Mobile Menu Toggle -->
+                    <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100" aria-label="Toggle Menu">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-6 space-y-1.5 shadow-xl">
+            <a href="#why-me" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-brand-soft hover:text-brand">Why Work With Me</a>
+            <a href="#portfolio" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-brand-soft hover:text-brand">Featured Demos</a>
+            <a href="#packages" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-brand-soft hover:text-brand">Pricing Packages</a>
+            <a href="#process" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-brand-soft hover:text-brand">How It Works</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-xl text-sm font-semibold text-brand bg-brand-soft">Get a Free Website Preview</a>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <section class="relative overflow-hidden bg-navy-900 text-white hero-grid-bg">
+        <!-- Subtle Ambient Glow -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand/25 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-emerald/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-28">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Column -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-white/10 border border-white/15 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-indigo-200">
+                        <span class="w-2 h-2 rounded-full bg-emerald animate-pulse"></span>
+                        <span>Available for Vizag Local & Remote Web Projects</span>
+                    </div>
+
+                    <h1 class="font-display text-3xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight leading-[1.12]">
+                        Fast, Modern Websites That Bring Local Businesses <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-emerald-400">More Customers.</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
+                        Hi, I’m <strong class="text-white">Sai Babu Karri</strong> — an <strong class="text-white">MCA graduate, Computer Science Lecturer & Project Coordinator</strong> in Visakhapatnam. I build high-converting static business websites and custom web solutions for restaurants, schools, clinics, and growing brands.
+                    </p>
+
+                    <!-- Primary CTAs -->
+                    <div class="flex flex-wrap items-center gap-3.5 pt-2">
+                        <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-brand hover:bg-brand-hover text-white font-semibold px-6 py-4 rounded-2xl shadow-lg shadow-brand/30 transition-all text-sm sm:text-base">
+                            <span>Get a Free Website Preview</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#packages" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border border-white/20 text-white font-semibold px-6 py-4 rounded-2xl transition-all text-sm sm:text-base">
+                            <span>Explore Packages</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="grid sm:grid-cols-3 gap-3 pt-4 border-t border-white/10 text-xs sm:text-sm text-slate-300">
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-300 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <span>48-Hour Rapid Delivery</span>
+                        </div>
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                            </div>
+                            <span>Mobile-First & SEO Ready</span>
+                        </div>
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-300 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                            <span>Vizag Support (English & Telugu)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Developer Profile & Quick Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-navy-800/90 backdrop-blur-xl border border-white/15 rounded-3xl p-6 sm:p-7 shadow-2xl space-y-6">
+                        <div class="flex items-center gap-4 pb-5 border-b border-white/10">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand to-emerald text-white flex items-center justify-center font-display font-extrabold text-2xl shadow-lg shrink-0">
+                                SBK
+                            </div>
+                            <div>
+                                <h2 class="font-display text-xl font-bold text-white">Sai Babu Karri</h2>
+                                <p class="text-xs sm:text-sm text-indigo-300 font-medium">Freelance Web Developer & CS Lecturer</p>
+                                <div class="flex items-center gap-2 text-xs text-slate-400 mt-1">
+                                    <i class="fa-solid fa-location-dot text-emerald"></i>
+                                    <span>Visakhapatnam, Andhra Pradesh</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Key Metrics / Value Props -->
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-navy-900/80 p-4 rounded-2xl border border-white/10">
+                                <div class="text-2xl font-display font-extrabold text-white">2–3 Days</div>
+                                <div class="text-xs text-slate-400 mt-0.5">Starter Site Launch</div>
+                            </div>
+                            <div class="bg-navy-900/80 p-4 rounded-2xl border border-white/10">
+                                <div class="text-2xl font-display font-extrabold text-emerald">₹6,000+</div>
+                                <div class="text-xs text-slate-400 mt-0.5">Transparent Packages</div>
+                            </div>
+                        </div>
+
+                        <!-- Direct Contact Quick Actions -->
+                        <div class="space-y-2.5 text-sm">
+                            <a href="tel:+919347567746" class="flex items-center justify-between bg-white/5 hover:bg-white/10 px-4 py-3 rounded-xl border border-white/10 transition-colors">
+                                <span class="flex items-center gap-2.5 text-slate-200">
+                                    <i class="fa-solid fa-phone text-indigo-400"></i>
+                                    <span>+91 93475 67746</span>
+                                </span>
+                                <span class="text-xs font-semibold text-indigo-300">Call Now</span>
+                            </a>
+                            <a href="mailto:saibabukarri25@gmail.com" class="flex items-center justify-between bg-white/5 hover:bg-white/10 px-4 py-3 rounded-xl border border-white/10 transition-colors">
+                                <span class="flex items-center gap-2.5 text-slate-200 truncate">
+                                    <i class="fa-solid fa-envelope text-emerald"></i>
+                                    <span class="truncate">saibabukarri25@gmail.com</span>
+                                </span>
+                                <span class="text-xs font-semibold text-emerald">Email</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Why Work With Me (Credibility Section) -->
+    <section id="why-me" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-brand">Academic Rigor Meets Real-World Delivery</span>
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Why Local Businesses Trust My Work</h2>
+            <p class="text-slate-600 mt-3 text-sm sm:text-base">
+                As a Computer Science Lecturer & Project Coordinator, I combine clean software engineering with clear, jargon-free communication so you get a reliable website on time.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+            <!-- Pillar 1 -->
+            <div class="bg-white rounded-3xl p-7 border border-slate-200/80 shadow-sm card-lift">
+                <div class="w-12 h-12 rounded-2xl bg-brand-soft text-brand flex items-center justify-center text-xl mb-5">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h3 class="font-display text-xl font-bold text-slate-900 mb-2">Proven Project Leadership</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    MCA graduate (8.02 CGPA) and Computer Science Lecturer & Project Coordinator at <strong>Aditya Degree College</strong>, experienced in managing software lifecycles from requirement gathering to live deployment.
+                </p>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="bg-white rounded-3xl p-7 border border-slate-200/80 shadow-sm card-lift">
+                <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald flex items-center justify-center text-xl mb-5">
+                    <i class="fa-solid fa-layer-group"></i>
+                </div>
+                <h3 class="font-display text-xl font-bold text-slate-900 mb-2">Full-Stack & AI Ready</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    Beyond basic templates—skilled in <strong>HTML5, CSS3, JavaScript, Angular, React/Vite</strong>, plus backend & database technologies (<strong>Java, Spring Boot, Python, MySQL, PostgreSQL, MongoDB</strong>) and AI/LLM automation.
+                </p>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="bg-white rounded-3xl p-7 border border-slate-200/80 shadow-sm card-lift">
+                <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl mb-5">
+                    <i class="fa-solid fa-comments"></i>
+                </div>
+                <h3 class="font-display text-xl font-bold text-slate-900 mb-2">Zero Jargon & Local Support</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    Clear explanations in <strong>English or Telugu</strong>, fixed transparent pricing, and direct in-person or WhatsApp coordination right here in Visakhapatnam.
+                </p>
+            </div>
+        </div>
+
+        <!-- Tech Stack Pill Bar -->
+        <div class="mt-10 bg-white rounded-3xl p-6 border border-slate-200/80 flex flex-wrap items-center justify-between gap-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Core Technologies:</span>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-semibold">HTML5 & CSS3</span>
+                <span class="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-semibold">JavaScript (ES6+)</span>
+                <span class="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-semibold">React / Vite & Tailwind</span>
+                <span class="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-semibold">Angular</span>
+                <span class="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-semibold">Java 8+ & Spring Boot</span>
+                <span class="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-semibold">Python & AI/LLMs</span>
+                <span class="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-semibold">MySQL / PostgreSQL</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Featured Portfolio / Live Demo Showcase -->
+    <section id="portfolio" class="py-16 sm:py-24 bg-white border-y border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-[0.2em] text-brand">Show, Don't Just Tell</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Featured Demos & Solutions</h2>
+                    <p class="text-slate-600 mt-2 text-sm sm:text-base max-w-2xl">
+                        Explore sample builds crafted for local restaurants, educational institutions, and automated business workflows.
+                    </p>
+                </div>
+
+                <!-- Interactive Filter Tabs -->
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="filterDemos('all')" data-filter="all" class="demo-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-navy-900 text-white shadow-sm transition-all">
+                        All Projects
+                    </button>
+                    <button onclick="filterDemos('restaurant')" data-filter="restaurant" class="demo-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">
+                        Restaurants & Retail
+                    </button>
+                    <button onclick="filterDemos('school')" data-filter="school" class="demo-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">
+                        Schools & Institutions
+                    </button>
+                    <button onclick="filterDemos('ai')" data-filter="ai" class="demo-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">
+                        Custom & AI
+                    </button>
+                </div>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div id="portfolio-grid" class="grid md:grid-cols-3 gap-8">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Clear, Transparent Packages -->
+    <section id="packages" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-brand">No Hidden Charges</span>
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Transparent Website Packages</h2>
+            <p class="text-slate-600 mt-3 text-sm sm:text-base">
+                Pick a package that matches your business stage. Every build is mobile-responsive, fast-loading, and designed to turn visitors into calls and WhatsApp inquiries.
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+            <!-- Package 1: Starter -->
+            <div class="bg-white rounded-3xl p-7 sm:p-8 border border-slate-200 shadow-sm flex flex-col justify-between card-lift">
+                <div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Starter Landing Page</span>
+                        <span class="text-xs font-semibold bg-slate-100 text-slate-700 px-3 py-1 rounded-full">2–3 Days</span>
+                    </div>
+                    <div class="mt-4">
+                        <span class="font-display text-3xl sm:text-4xl font-extrabold text-slate-900">₹6,000 – ₹9,000</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 mt-2">
+                        Ideal for Restaurants, Cafes, Clinics, Salons, and Local Service Providers.
+                    </p>
+
+                    <ul class="mt-6 pt-6 border-t border-slate-100 space-y-3.5 text-sm text-slate-700">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald mt-0.5"></i>
+                            <span>Single-page high-converting responsive design</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald mt-0.5"></i>
+                            <span>Interactive Menu or Services showcase</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald mt-0.5"></i>
+                            <span>Google Maps location & directions embed</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald mt-0.5"></i>
+                            <span>Click-to-Call & direct WhatsApp lead button</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald mt-0.5"></i>
+                            <span>Basic Local SEO & fast mobile speed setup</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <button onclick="selectPackage('Starter Landing Page (₹6,000 – ₹9,000)')" class="mt-8 w-full py-3.5 px-5 rounded-2xl bg-slate-900 hover:bg-brand text-white font-semibold text-sm transition-colors">
+                    Select Starter
+                </button>
+            </div>
+
+            <!-- Package 2: Business Pro (Popular) -->
+            <div class="bg-navy-900 text-white rounded-3xl p-7 sm:p-8 border-2 border-brand shadow-xl flex flex-col justify-between relative card-lift">
+                <div class="absolute -top-3.5 right-6 bg-brand text-white text-[11px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow">
+                    Most Popular
+                </div>
+                <div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-300">Business Pro · 5 Pages</span>
+                        <span class="text-xs font-semibold bg-white/10 text-indigo-200 px-3 py-1 rounded-full">5–7 Days</span>
+                    </div>
+                    <div class="mt-4">
+                        <span class="font-display text-3xl sm:text-4xl font-extrabold text-white">₹12,000 – ₹18,000</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-300 mt-2">
+                        Ideal for Schools, Coaching Centers, Gyms, Hospitals & Real Estate Agencies.
+                    </p>
+
+                    <ul class="mt-6 pt-6 border-t border-white/10 space-y-3.5 text-sm text-slate-200">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald mt-0.5"></i>
+                            <span>5 Custom Pages: Home, About, Services/Courses, Gallery & Contact</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald mt-0.5"></i>
+                            <span>Lead & Admissions Inquiry Form (Email + WhatsApp routing)</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald mt-0.5"></i>
+                            <span>Google Business Profile & Reviews showcase integration</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald mt-0.5"></i>
+                            <span>On-page Local Search Optimization for Visakhapatnam</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald mt-0.5"></i>
+                            <span>2 Rounds of design revisions included</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <button onclick="selectPackage('Business Pro – 5 Pages (₹12,000 – ₹18,000)')" class="mt-8 w-full py-3.5 px-5 rounded-2xl bg-brand hover:bg-brand-hover text-white font-semibold text-sm shadow-lg shadow-brand/30 transition-colors">
+                    Select Business Pro
+                </button>
+            </div>
+
+            <!-- Package 3: Growth + Custom / AI -->
+            <div class="bg-white rounded-3xl p-7 sm:p-8 border border-slate-200 shadow-sm flex flex-col justify-between card-lift">
+                <div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Growth + Custom / AI</span>
+                        <span class="text-xs font-semibold bg-slate-100 text-slate-700 px-3 py-1 rounded-full">7–10 Days</span>
+                    </div>
+                    <div class="mt-4">
+                        <span class="font-display text-3xl sm:text-4xl font-extrabold text-slate-900">₹20,000 – ₹28,000</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 mt-2">
+                        Ideal for Multi-branch businesses, Educational Portals & Custom Workflows.
+                    </p>
+
+                    <ul class="mt-6 pt-6 border-t border-slate-100 space-y-3.5 text-sm text-slate-700">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald mt-0.5"></i>
+                            <span>Everything in Business Pro (5+ pages)</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald mt-0.5"></i>
+                            <span>Custom Inquiry, Appointment or Student Admission Database</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald mt-0.5"></i>
+                            <span>Smart AI FAQ Assistant / Automated Lead Responder</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald mt-0.5"></i>
+                            <span>Admin reporting dashboard & priority support</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <button onclick="selectPackage('Growth + Custom / AI Add-On (₹20,000 – ₹28,000)')" class="mt-8 w-full py-3.5 px-5 rounded-2xl bg-slate-900 hover:bg-brand text-white font-semibold text-sm transition-colors">
+                    Select Growth
+                </button>
+            </div>
+        </div>
+
+        <!-- Billing & Payment Transparency Note -->
+        <div class="mt-10 bg-brand-soft border border-brand/20 rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="flex items-start gap-3.5">
+                <i class="fa-solid fa-circle-info text-brand text-lg mt-0.5"></i>
+                <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                    <strong>100% Ownership & Clear Terms:</strong> Domain & Hosting are billed transparently at actuals in your own name (~₹1,000–₹2,500/yr) so you never lose control of your brand. Payment terms: <strong>50% advance to start, 50% on launch</strong>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Simple 4-Step Process -->
+    <section id="process" class="py-16 sm:py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-emerald">Simple & Stress-Free</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold mt-2">From Idea to Live Website in 4 Steps</h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Step 1 -->
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-6 relative">
+                    <div class="w-10 h-10 rounded-xl bg-brand text-white font-display font-bold flex items-center justify-center mb-4">01</div>
+                    <h3 class="font-display text-lg font-bold mb-2">Free 15-Min Call or Demo Preview</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                        We discuss your business goals on a quick call or WhatsApp, and I show you a tailored preview concept.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-6 relative">
+                    <div class="w-10 h-10 rounded-xl bg-brand text-white font-display font-bold flex items-center justify-center mb-4">02</div>
+                    <h3 class="font-display text-lg font-bold mb-2">Share Your Content</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                        Send over your logo, shop/campus photos, menu or price list, and contact info right on WhatsApp.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-6 relative">
+                    <div class="w-10 h-10 rounded-xl bg-brand text-white font-display font-bold flex items-center justify-center mb-4">03</div>
+                    <h3 class="font-display text-lg font-bold mb-2">Design & Build (2–7 Days)</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                        I craft your responsive, fast-loading website and share a private staging link for you to test on your phone.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-6 relative">
+                    <div class="w-10 h-10 rounded-xl bg-emerald text-white font-display font-bold flex items-center justify-center mb-4">04</div>
+                    <h3 class="font-display text-lg font-bold mb-2">Review, Connect Domain & Go Live</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                        After your final approval, I connect your custom domain (e.g., .in or .com), enable SSL security, and launch!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Interactive Project Inquiry & Instant WhatsApp Quote Generator -->
+    <section id="contact" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden">
+            <div class="grid lg:grid-cols-12">
+                <!-- Left Contact Info Column -->
+                <div class="lg:col-span-5 bg-navy-900 text-white p-8 sm:p-10 flex flex-col justify-between space-y-8">
+                    <div class="space-y-4">
+                        <span class="text-xs font-bold uppercase tracking-[0.2em] text-emerald">Start Your Project</span>
+                        <h2 class="font-display text-3xl font-extrabold leading-tight">
+                            Request a Free Website Preview or Quote
+                        </h2>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            Fill out your business details to generate an instant WhatsApp or Email inquiry—or reach out directly for an in-person meeting in Visakhapatnam.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4 text-sm">
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-white/10 text-emerald flex items-center justify-center shrink-0">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400">Phone & WhatsApp</div>
+                                <a href="tel:+919347567746" class="font-bold text-base hover:text-emerald transition-colors">+91 93475 67746</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-white/10 text-indigo-300 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400">Email</div>
+                                <a href="mailto:saibabukarri25@gmail.com" class="font-semibold hover:text-indigo-300 transition-colors break-all">saibabukarri25@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-white/10 text-amber-300 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400">Location & Languages</div>
+                                <div class="font-semibold">Visakhapatnam, Andhra Pradesh</div>
+                                <div class="text-xs text-slate-400 mt-0.5">Fluent in English & Telugu</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-white/10 text-xs text-slate-400">
+                        Typical response time: Under 2 hours (Evenings & Weekends).
+                    </div>
+                </div>
+
+                <!-- Right Interactive Quote Form -->
+                <div class="lg:col-span-7 p-8 sm:p-10">
+                    <form id="inquiry-form" onsubmit="event.preventDefault(); sendWhatsAppInquiry();" class="space-y-5">
+                        <div class="grid sm:grid-cols-2 gap-5">
+                            <div>
+                                <label for="business-name" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Business / Organization Name *</label>
+                                <input type="text" id="business-name" required placeholder="e.g., Sri Sai Dental Clinic" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-brand focus:bg-white transition-colors">
+                            </div>
+                            <div>
+                                <label for="contact-person" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Your Name *</label>
+                                <input type="text" id="contact-person" required placeholder="e.g., Ramesh Kumar" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-brand focus:bg-white transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-5">
+                            <div>
+                                <label for="contact-phone" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Phone / WhatsApp Number *</label>
+                                <input type="tel" id="contact-phone" required placeholder="e.g., 98480 12345" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-brand focus:bg-white transition-colors">
+                            </div>
+                            <div>
+                                <label for="business-category" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Business Category</label>
+                                <select id="business-category" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-brand focus:bg-white transition-colors">
+                                    <option value="Restaurant / Cafe / Bakery">Restaurant / Cafe / Bakery</option>
+                                    <option value="School / Coaching Institute">School / Coaching Institute</option>
+                                    <option value="Clinic / Healthcare">Clinic / Healthcare</option>
+                                    <option value="Retail / Local Service">Retail / Local Service</option>
+                                    <option value="Custom Web App / Other">Custom Web App / Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="selected-package" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Preferred Package</label>
+                            <select id="selected-package" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition-colors">
+                                <option value="Starter Landing Page (₹6,000 – ₹9,000)">Starter Landing Page (₹6,000 – ₹9,000 · 2–3 Days)</option>
+                                <option value="Business Pro – 5 Pages (₹12,000 – ₹18,000)" selected>Business Pro – 5 Pages (₹12,000 – ₹18,000 · Most Popular)</option>
+                                <option value="Growth + Custom / AI Add-On (₹20,000 – ₹28,000)">Growth + Custom / AI Add-On (₹20,000 – ₹28,000 · 7–10 Days)</option>
+                                <option value="Not sure yet — Need a Free Recommendation">Not sure yet — Need a Free Recommendation</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="project-message" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Project Details / Goals</label>
+                            <textarea id="project-message" rows="3" placeholder="Tell me briefly about your business, location in Vizag, or any reference site you like..." class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-brand focus:bg-white transition-colors"></textarea>
+                        </div>
+
+                        <!-- Dual Action Buttons -->
+                        <div class="grid sm:grid-cols-2 gap-3.5 pt-2">
+                            <button type="submit" class="inline-flex items-center justify-center gap-2 bg-emerald hover:bg-emerald-dark text-white font-semibold py-4 px-6 rounded-2xl shadow-lg shadow-emerald/25 transition-all text-sm">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span>Send Inquiry via WhatsApp</span>
+                            </button>
+                            <button type="button" onclick="sendEmailInquiry()" class="inline-flex items-center justify-center gap-2 bg-navy-900 hover:bg-brand text-white font-semibold py-4 px-6 rounded-2xl transition-all text-sm">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Send via Email</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Footer -->
+    <footer class="bg-navy-950 text-slate-400 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="text-center md:text-left">
+                    <div class="font-display font-bold text-lg text-white">Sai Babu Karri</div>
+                    <div class="text-xs mt-1">Freelance Web Developer · Visakhapatnam, Andhra Pradesh</div>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm">
+                    <a href="tel:+919347567746" class="hover:text-white transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-phone text-brand"></i>
+                        <span>9347567746</span>
+                    </a>
+                    <a href="https://wa.me/919347567746" target="_blank" rel="noopener noreferrer" class="hover:text-emerald transition-colors flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-emerald"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="mailto:saibabukarri25@gmail.com" class="hover:text-white transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-envelope text-indigo-400"></i>
+                        <span>saibabukarri25@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <div>&copy; 2026 Sai Babu Karri. Built with precision in Visakhapatnam.</div>
+                <div class="flex gap-5">
+                    <a href="#why-me" class="hover:text-slate-300">About</a>
+                    <a href="#portfolio" class="hover:text-slate-300">Demos</a>
+                    <a href="#packages" class="hover:text-slate-300">Packages</a>
+                    <a href="#contact" class="hover:text-slate-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Demo Preview Modal -->
+    <div id="demo-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+        <div onclick="closeDemoModal()" class="absolute inset-0 bg-navy-950/75 backdrop-blur-sm"></div>
+        <div class="relative bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 z-10 space-y-5">
+            <div class="flex items-start justify-between gap-4">
+                <div>
+                    <span id="modal-tag" class="text-[11px] font-bold uppercase tracking-wider text-brand bg-brand-soft px-3 py-1 rounded-full">Demo Preview</span>
+                    <h3 id="modal-title" class="font-display text-2xl font-bold text-slate-900 mt-2">Project Title</h3>
+                </div>
+                <button onclick="closeDemoModal()" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <img id="modal-img" src="" alt="Project Preview" class="w-full h-52 object-cover rounded-2xl border border-slate-100">
+            <p id="modal-desc" class="text-sm text-slate-600 leading-relaxed"></p>
+            <div id="modal-features" class="flex flex-wrap gap-2"></div>
+            <div class="pt-3 flex flex-wrap gap-3">
+                <button id="modal-request-btn" class="flex-1 bg-brand hover:bg-brand-hover text-white font-semibold py-3.5 px-5 rounded-xl text-sm transition-colors">
+                    Request Similar Website
+                </button>
+                <button onclick="closeDemoModal()" class="px-5 py-3.5 rounded-xl border border-slate-200 text-slate-700 font-semibold text-sm hover:bg-slate-50">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        const portfolioProjects = [
+            {
+                id: 1,
+                title: "Red Velvet Bakery & Restaurant",
+                location: "Marripalem, Visakhapatnam",
+                category: "restaurant",
+                categoryLabel: "Restaurants & Retail",
+                suggestedCategory: "Restaurant / Cafe / Bakery",
+                suggestedPackage: "Starter Landing Page (₹6,000 – ₹9,000)",
+                summary: "Modern restaurant landing page with interactive menu filtering, WhatsApp/inquiry order list builder, Google review breakdown (4.2 ★), and embedded directions map.",
+                features: ["Interactive Menu Filter", "Order List Drawer", "Google Maps & Reviews", "Mobile-First UI"],
+                img: "https://images.unsplash.com/photo-1586788680434-30d324b2d46f?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 2,
+                title: "Bharati English Medium School",
+                location: "Visakhapatnam",
+                category: "school",
+                categoryLabel: "Schools & Institutions",
+                suggestedCategory: "School / Coaching Institute",
+                suggestedPackage: "Business Pro – 5 Pages (₹12,000 – ₹18,000)",
+                summary: "Responsive institutional web platform featuring admissions inquiry routing, academic highlights, campus photo gallery, and parent-friendly mobile navigation.",
+                features: ["Admissions Lead Form", "Academic Showcase", "Campus Gallery", "Fast Mobile Speed"],
+                img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 3,
+                title: "AI-Powered Educational & Business Assistant",
+                location: "Custom Web & Python Solution",
+                category: "ai",
+                categoryLabel: "Custom & AI",
+                suggestedCategory: "Custom Web App / Other",
+                suggestedPackage: "Growth + Custom / AI Add-On (₹20,000 – ₹28,000)",
+                summary: "Smart inquiry and Q&A automation workflow built with Python, NLP, LLM APIs, and a clean web frontend to answer customer or student queries 24/7.",
+                features: ["Python & LLM Integration", "Automated FAQ Workflow", "Clean Web Interface", "Lead Capture"],
+                img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80"
+            }
+        ];
+
+        function renderPortfolio(filter = 'all') {
+            const grid = document.getElementById('portfolio-grid');
+            const items = filter === 'all' ? portfolioProjects : portfolioProjects.filter(p => p.category === filter);
+
+            grid.innerHTML = items.map(project => `
+                <div class="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm card-lift flex flex-col">
+                    <div class="relative aspect-[16/10] bg-slate-200 overflow-hidden">
+                        <img 
+                            src="${project.img}" 
+                            onerror="this.src='https://placehold.co/800x500/0B1120/FFFFFF?text=${encodeURIComponent(project.title)}'"
+                            alt="${project.title}" 
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                        >
+                        <span class="absolute top-3 left-3 bg-navy-900/90 backdrop-blur text-white text-[11px] font-semibold px-3 py-1 rounded-full">
+                            ${project.categoryLabel}
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="text-xs font-medium text-brand mb-1">${project.location}</div>
+                            <h3 class="font-display text-xl font-bold text-slate-900">${project.title}</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">${project.summary}</p>
+                            <div class="flex flex-wrap gap-1.5 mt-4">
+                                ${project.features.map(f => `<span class="text-[11px] font-medium bg-white border border-slate-200 text-slate-600 px-2.5 py-1 rounded-lg">${f}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="pt-5 mt-5 border-t border-slate-200/80 flex items-center gap-2.5">
+                            <button onclick="openDemoModal(${project.id})" class="flex-1 py-2.5 px-3.5 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-slate-800 font-semibold text-xs transition-colors">
+                                Preview Details
+                            </button>
+                            <button onclick="requestSimilar(${project.id})" class="flex-1 py-2.5 px-3.5 rounded-xl bg-brand hover:bg-brand-hover text-white font-semibold text-xs transition-colors">
+                                Request Similar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterDemos(category) {
+            document.querySelectorAll('.demo-tab').forEach(btn => {
+                if (btn.dataset.filter === category) {
+                    btn.classList.remove('bg-slate-100', 'text-slate-700');
+                    btn.classList.add('bg-navy-900', 'text-white', 'shadow-sm');
+                } else {
+                    btn.classList.remove('bg-navy-900', 'text-white', 'shadow-sm');
+                    btn.classList.add('bg-slate-100', 'text-slate-700');
+                }
+            });
+            renderPortfolio(category);
+        }
+
+        function openDemoModal(id) {
+            const project = portfolioProjects.find(p => p.id === id);
+            if (!project) return;
+
+            document.getElementById('modal-tag').textContent = project.categoryLabel;
+            document.getElementById('modal-title').textContent = project.title;
+            document.getElementById('modal-img').src = project.img;
+            document.getElementById('modal-desc').textContent = project.summary;
+            document.getElementById('modal-features').innerHTML = project.features.map(f => 
+                `<span class="text-xs font-semibold bg-slate-100 text-slate-700 px-3 py-1.5 rounded-xl">${f}</span>`
+            ).join('');
+
+            document.getElementById('modal-request-btn').onclick = () => {
+                closeDemoModal();
+                requestSimilar(id);
+            };
+
+            document.getElementById('demo-modal').classList.remove('hidden');
+        }
+
+        function closeDemoModal() {
+            document.getElementById('demo-modal').classList.add('hidden');
+        }
+
+        function requestSimilar(id) {
+            const project = portfolioProjects.find(p => p.id === id);
+            if (!project) return;
+
+            document.getElementById('business-category').value = project.suggestedCategory;
+            document.getElementById('selected-package').value = project.suggestedPackage;
+            document.getElementById('project-message').value = `Hi Sai Babu, I liked the "${project.title}" demo and would like a similar website for my business.`;
+            
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            showToast(`Pre-filled inquiry based on "${project.title}"`);
+        }
+
+        function selectPackage(packageName) {
+            document.getElementById('selected-package').value = packageName;
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            showToast(`Selected: ${packageName}`);
+        }
+
+        function getFormValues() {
+            return {
+                business: document.getElementById('business-name').value.trim() || 'Not specified',
+                person: document.getElementById('contact-person').value.trim() || 'Prospective Client',
+                phone: document.getElementById('contact-phone').value.trim() || 'Not provided',
+                category: document.getElementById('business-category').value,
+                pkg: document.getElementById('selected-package').value,
+                message: document.getElementById('project-message').value.trim() || 'Looking for a modern website.'
+            };
+        }
+
+        function sendWhatsAppInquiry() {
+            const data = getFormValues();
+            const text = `Hello Sai Babu Karri, I would like to request a website quote:\n\n` +
+                `• *Business:* ${data.business}\n` +
+                `• *Contact Person:* ${data.person}\n` +
+                `• *Phone:* ${data.phone}\n` +
+                `• *Category:* ${data.category}\n` +
+                `• *Package:* ${data.pkg}\n` +
+                `• *Details:* ${data.message}`;
+
+            const waUrl = `https://wa.me/919347567746?text=${encodeURIComponent(text)}`;
+            showToast('Opening WhatsApp with your formatted inquiry...');
+            window.open(waUrl, '_blank', 'noopener,noreferrer');
+        }
+
+        function sendEmailInquiry() {
+            const data = getFormValues();
+            const subject = `Website Inquiry: ${data.business} (${data.pkg})`;
+            const body = `Hi Sai Babu Karri,\n\nI would like to discuss a website project for my business:\n\n` +
+                `Business Name: ${data.business}\n` +
+                `Contact Person: ${data.person}\n` +
+                `Phone / WhatsApp: ${data.phone}\n` +
+                `Category: ${data.category}\n` +
+                `Selected Package: ${data.pkg}\n` +
+                `Project Details: ${data.message}\n\n` +
+                `Best regards,\n${data.person}`;
+
+            const mailtoUrl = `mailto:saibabukarri25@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            showToast('Opening your email client with the quote request...');
+            window.location.href = mailtoUrl;
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'bg-navy-900 text-white text-xs sm:text-sm font-medium px-4 py-3.5 rounded-2xl shadow-xl border border-white/15 flex items-center gap-2.5 transition-all duration-300 transform translate-y-2 opacity-0';
+            toast.innerHTML = `<i class="fa-solid fa-circle-check text-emerald"></i> <span>${message}</span>`;
+            container.appendChild(toast);
+
+            requestAnimationFrame(() => {
+                toast.classList.remove('translate-y-2', 'opacity-0');
+            });
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-2');
+                setTimeout(() => toast.remove(), 300);
+            }, 3200);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderPortfolio('all');
+        });
+    </script>
+</body>
+</html>
