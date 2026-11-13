@@ -196,9 +196,7 @@
                 <div class="lg:col-span-5">
                     <div class="bg-navy-800/90 backdrop-blur-xl border border-white/15 rounded-3xl p-6 sm:p-7 shadow-2xl space-y-6">
                         <div class="flex items-center gap-4 pb-5 border-b border-white/10">
-                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand to-emerald text-white flex items-center justify-center font-display font-extrabold text-2xl shadow-lg shrink-0">
-                                SBK
-                            </div>
+                            <img src="mydp.jpg" alt="Sai Babu Karri" class="w-16 h-16 rounded-2xl object-cover shadow-lg shrink-0">
                             <div>
                                 <h2 class="font-display text-xl font-bold text-white">Sai Babu Karri</h2>
                                 <p class="text-xs sm:text-sm text-indigo-300 font-medium">Freelance Web Developer & CS Lecturer</p>
@@ -216,8 +214,8 @@
                                 <div class="text-xs text-slate-400 mt-0.5">Starter Site Launch</div>
                             </div>
                             <div class="bg-navy-900/80 p-4 rounded-2xl border border-white/10">
-                                <div class="text-2xl font-display font-extrabold text-emerald">₹6,000+</div>
-                                <div class="text-xs text-slate-400 mt-0.5">Transparent Packages</div>
+                                <div class="text-2xl font-display font-extrabold text-emerald">100%</div>
+                                <div class="text-xs text-slate-400 mt-0.5">Client Ownership</div>
                             </div>
                         </div>
 
@@ -284,7 +282,7 @@
                 </div>
                 <h3 class="font-display text-xl font-bold text-slate-900 mb-2">Zero Jargon & Local Support</h3>
                 <p class="text-sm text-slate-600 leading-relaxed">
-                    Clear explanations in <strong>English or Telugu</strong>, fixed transparent pricing, and direct in-person or WhatsApp coordination right here in Visakhapatnam.
+                    Clear explanations in <strong>English or Telugu</strong>, transparent collaboration, and direct in-person or WhatsApp coordination right here in Visakhapatnam.
                 </p>
             </div>
         </div>
@@ -340,11 +338,11 @@
         </div>
     </section>
 
-    <!-- 4. Clear, Transparent Packages -->
+    <!-- 4. Transparent Packages Section (Pricing Removed & Enquire Now Activated) -->
     <section id="packages" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-14">
-            <span class="text-xs font-bold uppercase tracking-[0.2em] text-brand">No Hidden Charges</span>
-            <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Transparent Website Packages</h2>
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-brand">Tailored Solutions</span>
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Website Packages & Services</h2>
             <p class="text-slate-600 mt-3 text-sm sm:text-base">
                 Pick a package that matches your business stage. Every build is mobile-responsive, fast-loading, and designed to turn visitors into calls and WhatsApp inquiries.
             </p>
@@ -359,7 +357,7 @@
                         <span class="text-xs font-semibold bg-slate-100 text-slate-700 px-3 py-1 rounded-full">2–3 Days</span>
                     </div>
                     <div class="mt-4">
-                        <span class="font-display text-3xl sm:text-4xl font-extrabold text-slate-900">₹6,000 – ₹9,000</span>
+                        <span class="font-display text-3xl sm:text-4xl font-extrabold text-slate-900">Request a Quote</span>
                     </div>
                     <p class="text-xs sm:text-sm text-slate-600 mt-2">
                         Ideal for Restaurants, Cafes, Clinics, Salons, and Local Service Providers.
@@ -389,8 +387,8 @@
                     </ul>
                 </div>
 
-                <button onclick="selectPackage('Starter Landing Page (₹6,000 – ₹9,000)')" class="mt-8 w-full py-3.5 px-5 rounded-2xl bg-slate-900 hover:bg-brand text-white font-semibold text-sm transition-colors">
-                    Select Starter
+                <button onclick="openEnquiryModal('Starter Landing Page')" class="mt-8 w-full py-3.5 px-5 rounded-2xl bg-slate-900 hover:bg-brand text-white font-semibold text-sm transition-colors">
+                    Enquire Now
                 </button>
             </div>
 
@@ -405,7 +403,7 @@
                         <span class="text-xs font-semibold bg-white/10 text-indigo-200 px-3 py-1 rounded-full">5–7 Days</span>
                     </div>
                     <div class="mt-4">
-                        <span class="font-display text-3xl sm:text-4xl font-extrabold text-white">₹12,000 – ₹18,000</span>
+                        <span class="font-display text-3xl sm:text-4xl font-extrabold text-white">Request a Quote</span>
                     </div>
                     <p class="text-xs sm:text-sm text-slate-300 mt-2">
                         Ideal for Schools, Coaching Centers, Gyms, Hospitals & Real Estate Agencies.
@@ -435,8 +433,8 @@
                     </ul>
                 </div>
 
-                <button onclick="selectPackage('Business Pro – 5 Pages (₹12,000 – ₹18,000)')" class="mt-8 w-full py-3.5 px-5 rounded-2xl bg-brand hover:bg-brand-hover text-white font-semibold text-sm shadow-lg shadow-brand/30 transition-colors">
-                    Select Business Pro
+                <button onclick="openEnquiryModal('Business Pro – 5 Pages')" class="mt-8 w-full py-3.5 px-5 rounded-2xl bg-brand hover:bg-brand-hover text-white font-semibold text-sm shadow-lg shadow-brand/30 transition-colors">
+                    Enquire Now
                 </button>
             </div>
 
@@ -448,7 +446,7 @@
                         <span class="text-xs font-semibold bg-slate-100 text-slate-700 px-3 py-1 rounded-full">7–10 Days</span>
                     </div>
                     <div class="mt-4">
-                        <span class="font-display text-3xl sm:text-4xl font-extrabold text-slate-900">₹20,000 – ₹28,000</span>
+                        <span class="font-display text-3xl sm:text-4xl font-extrabold text-slate-900">Request a Quote</span>
                     </div>
                     <p class="text-xs sm:text-sm text-slate-600 mt-2">
                         Ideal for Multi-branch businesses, Educational Portals & Custom Workflows.
@@ -474,8 +472,8 @@
                     </ul>
                 </div>
 
-                <button onclick="selectPackage('Growth + Custom / AI Add-On (₹20,000 – ₹28,000)')" class="mt-8 w-full py-3.5 px-5 rounded-2xl bg-slate-900 hover:bg-brand text-white font-semibold text-sm transition-colors">
-                    Select Growth
+                <button onclick="openEnquiryModal('Growth + Custom / AI Add-On')" class="mt-8 w-full py-3.5 px-5 rounded-2xl bg-slate-900 hover:bg-brand text-white font-semibold text-sm transition-colors">
+                    Enquire Now
                 </button>
             </div>
         </div>
@@ -485,7 +483,7 @@
             <div class="flex items-start gap-3.5">
                 <i class="fa-solid fa-circle-info text-brand text-lg mt-0.5"></i>
                 <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
-                    <strong>100% Ownership & Clear Terms:</strong> Domain & Hosting are billed transparently at actuals in your own name (~₹1,000–₹2,500/yr) so you never lose control of your brand. Payment terms: <strong>50% advance to start, 50% on launch</strong>.
+                    <strong>100% Ownership & Clear Terms:</strong> Domain & Hosting are billed transparently at actuals in your own name so you never lose control of your brand. Payment terms: <strong>50% advance to start, 50% on launch</strong>.
                 </p>
             </div>
         </div>
@@ -499,428 +497,185 @@
                 <h2 class="font-display text-3xl sm:text-4xl font-extrabold mt-2">From Idea to Live Website in 4 Steps</h2>
             </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Step 1 -->
-                <div class="bg-white/5 border border-white/10 rounded-3xl p-6 relative">
-                    <div class="w-10 h-10 rounded-xl bg-brand text-white font-display font-bold flex items-center justify-center mb-4">01</div>
-                    <h3 class="font-display text-lg font-bold mb-2">Free 15-Min Call or Demo Preview</h3>
-                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                        We discuss your business goals on a quick call or WhatsApp, and I show you a tailored preview concept.
-                    </p>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-slate-800/60 p-6 rounded-2xl border border-white/10">
+                    <div class="w-10 h-10 rounded-xl bg-brand text-white font-bold flex items-center justify-center mb-4">1</div>
+                    <h3 class="font-display font-bold text-lg mb-1">Consult & Scope</h3>
+                    <p class="text-xs text-slate-400">Share your business goals via WhatsApp or call to discuss your exact requirements.</p>
                 </div>
-
-                <!-- Step 2 -->
-                <div class="bg-white/5 border border-white/10 rounded-3xl p-6 relative">
-                    <div class="w-10 h-10 rounded-xl bg-brand text-white font-display font-bold flex items-center justify-center mb-4">02</div>
-                    <h3 class="font-display text-lg font-bold mb-2">Share Your Content</h3>
-                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                        Send over your logo, shop/campus photos, menu or price list, and contact info right on WhatsApp.
-                    </p>
+                <div class="bg-slate-800/60 p-6 rounded-2xl border border-white/10">
+                    <div class="w-10 h-10 rounded-xl bg-brand text-white font-bold flex items-center justify-center mb-4">2</div>
+                    <h3 class="font-display font-bold text-lg mb-1">Design & Preview</h3>
+                    <p class="text-xs text-slate-400">I build a custom live preview tailored specifically for your brand look and feel.</p>
                 </div>
-
-                <!-- Step 3 -->
-                <div class="bg-white/5 border border-white/10 rounded-3xl p-6 relative">
-                    <div class="w-10 h-10 rounded-xl bg-brand text-white font-display font-bold flex items-center justify-center mb-4">03</div>
-                    <h3 class="font-display text-lg font-bold mb-2">Design & Build (2–7 Days)</h3>
-                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                        I craft your responsive, fast-loading website and share a private staging link for you to test on your phone.
-                    </p>
+                <div class="bg-slate-800/60 p-6 rounded-2xl border border-white/10">
+                    <div class="w-10 h-10 rounded-xl bg-brand text-white font-bold flex items-center justify-center mb-4">3</div>
+                    <h3 class="font-display font-bold text-lg mb-1">Review & Refine</h3>
+                    <p class="text-xs text-slate-400">Review the live demo and provide feedback for any text or design tweaks.</p>
                 </div>
-
-                <!-- Step 4 -->
-                <div class="bg-white/5 border border-white/10 rounded-3xl p-6 relative">
-                    <div class="w-10 h-10 rounded-xl bg-emerald text-white font-display font-bold flex items-center justify-center mb-4">04</div>
-                    <h3 class="font-display text-lg font-bold mb-2">Review, Connect Domain & Go Live</h3>
-                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                        After your final approval, I connect your custom domain (e.g., .in or .com), enable SSL security, and launch!
-                    </p>
+                <div class="bg-slate-800/60 p-6 rounded-2xl border border-white/10">
+                    <div class="w-10 h-10 rounded-xl bg-emerald text-white font-bold flex items-center justify-center mb-4">4</div>
+                    <h3 class="font-display font-bold text-lg mb-1">Launch & Grow</h3>
+                    <p class="text-xs text-slate-400">Your site goes live with fast mobile speed and direct lead capture buttons.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. Interactive Project Inquiry & Instant WhatsApp Quote Generator -->
-    <section id="contact" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden">
-            <div class="grid lg:grid-cols-12">
-                <!-- Left Contact Info Column -->
-                <div class="lg:col-span-5 bg-navy-900 text-white p-8 sm:p-10 flex flex-col justify-between space-y-8">
-                    <div class="space-y-4">
-                        <span class="text-xs font-bold uppercase tracking-[0.2em] text-emerald">Start Your Project</span>
-                        <h2 class="font-display text-3xl font-extrabold leading-tight">
-                            Request a Free Website Preview or Quote
-                        </h2>
-                        <p class="text-sm text-slate-300 leading-relaxed">
-                            Fill out your business details to generate an instant WhatsApp or Email inquiry—or reach out directly for an in-person meeting in Visakhapatnam.
-                        </p>
-                    </div>
-
-                    <div class="space-y-4 text-sm">
-                        <div class="flex items-start gap-3.5">
-                            <div class="w-10 h-10 rounded-xl bg-white/10 text-emerald flex items-center justify-center shrink-0">
-                                <i class="fa-brands fa-whatsapp text-lg"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-slate-400">Phone & WhatsApp</div>
-                                <a href="tel:+919347567746" class="font-bold text-base hover:text-emerald transition-colors">+91 93475 67746</a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-3.5">
-                            <div class="w-10 h-10 rounded-xl bg-white/10 text-indigo-300 flex items-center justify-center shrink-0">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-slate-400">Email</div>
-                                <a href="mailto:saibabukarri25@gmail.com" class="font-semibold hover:text-indigo-300 transition-colors break-all">saibabukarri25@gmail.com</a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-3.5">
-                            <div class="w-10 h-10 rounded-xl bg-white/10 text-amber-300 flex items-center justify-center shrink-0">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-slate-400">Location & Languages</div>
-                                <div class="font-semibold">Visakhapatnam, Andhra Pradesh</div>
-                                <div class="text-xs text-slate-400 mt-0.5">Fluent in English & Telugu</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pt-4 border-t border-white/10 text-xs text-slate-400">
-                        Typical response time: Under 2 hours (Evenings & Weekends).
-                    </div>
-                </div>
-
-                <!-- Right Interactive Quote Form -->
-                <div class="lg:col-span-7 p-8 sm:p-10">
-                    <form id="inquiry-form" onsubmit="event.preventDefault(); sendWhatsAppInquiry();" class="space-y-5">
-                        <div class="grid sm:grid-cols-2 gap-5">
-                            <div>
-                                <label for="business-name" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Business / Organization Name *</label>
-                                <input type="text" id="business-name" required placeholder="e.g., Sri Sai Dental Clinic" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-brand focus:bg-white transition-colors">
-                            </div>
-                            <div>
-                                <label for="contact-person" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Your Name *</label>
-                                <input type="text" id="contact-person" required placeholder="e.g., Ramesh Kumar" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-brand focus:bg-white transition-colors">
-                            </div>
-                        </div>
-
-                        <div class="grid sm:grid-cols-2 gap-5">
-                            <div>
-                                <label for="contact-phone" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Phone / WhatsApp Number *</label>
-                                <input type="tel" id="contact-phone" required placeholder="e.g., 98480 12345" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-brand focus:bg-white transition-colors">
-                            </div>
-                            <div>
-                                <label for="business-category" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Business Category</label>
-                                <select id="business-category" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-brand focus:bg-white transition-colors">
-                                    <option value="Restaurant / Cafe / Bakery">Restaurant / Cafe / Bakery</option>
-                                    <option value="School / Coaching Institute">School / Coaching Institute</option>
-                                    <option value="Clinic / Healthcare">Clinic / Healthcare</option>
-                                    <option value="Retail / Local Service">Retail / Local Service</option>
-                                    <option value="Custom Web App / Other">Custom Web App / Other</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label for="selected-package" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Preferred Package</label>
-                            <select id="selected-package" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition-colors">
-                                <option value="Starter Landing Page (₹6,000 – ₹9,000)">Starter Landing Page (₹6,000 – ₹9,000 · 2–3 Days)</option>
-                                <option value="Business Pro – 5 Pages (₹12,000 – ₹18,000)" selected>Business Pro – 5 Pages (₹12,000 – ₹18,000 · Most Popular)</option>
-                                <option value="Growth + Custom / AI Add-On (₹20,000 – ₹28,000)">Growth + Custom / AI Add-On (₹20,000 – ₹28,000 · 7–10 Days)</option>
-                                <option value="Not sure yet — Need a Free Recommendation">Not sure yet — Need a Free Recommendation</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label for="project-message" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Project Details / Goals</label>
-                            <textarea id="project-message" rows="3" placeholder="Tell me briefly about your business, location in Vizag, or any reference site you like..." class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-brand focus:bg-white transition-colors"></textarea>
-                        </div>
-
-                        <!-- Dual Action Buttons -->
-                        <div class="grid sm:grid-cols-2 gap-3.5 pt-2">
-                            <button type="submit" class="inline-flex items-center justify-center gap-2 bg-emerald hover:bg-emerald-dark text-white font-semibold py-4 px-6 rounded-2xl shadow-lg shadow-emerald/25 transition-all text-sm">
-                                <i class="fa-brands fa-whatsapp text-lg"></i>
-                                <span>Send Inquiry via WhatsApp</span>
-                            </button>
-                            <button type="button" onclick="sendEmailInquiry()" class="inline-flex items-center justify-center gap-2 bg-navy-900 hover:bg-brand text-white font-semibold py-4 px-6 rounded-2xl transition-all text-sm">
-                                <i class="fa-solid fa-paper-plane"></i>
-                                <span>Send via Email</span>
-                            </button>
-                        </div>
-                    </form>
-                </div>
+    <!-- Footer Section -->
+    <footer id="contact" class="bg-navy-950 text-white py-16 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <h3 class="font-display text-2xl sm:text-3xl font-bold">Ready to Get Your Business Online?</h3>
+            <p class="text-slate-400 max-w-xl mx-auto text-sm">Let’s discuss your project today. Reach out directly via phone or WhatsApp for a fast response.</p>
+            <div class="flex justify-center gap-4 pt-2">
+                <a href="https://wa.me/919347567746?text=Hi%20Sai%20Babu%2C%20I%20want%20to%20get%20started%20with%20a%20website." target="_blank" class="inline-flex items-center gap-2 bg-emerald hover:bg-emerald-dark text-white font-semibold px-6 py-3.5 rounded-xl shadow-lg transition-all text-sm">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Chat on WhatsApp</span>
+                </a>
             </div>
-        </div>
-    </section>
-
-    <!-- 7. Footer -->
-    <footer class="bg-navy-950 text-slate-400 border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div class="text-center md:text-left">
-                    <div class="font-display font-bold text-lg text-white">Sai Babu Karri</div>
-                    <div class="text-xs mt-1">Freelance Web Developer · Visakhapatnam, Andhra Pradesh</div>
-                </div>
-
-                <div class="flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm">
-                    <a href="tel:+919347567746" class="hover:text-white transition-colors flex items-center gap-2">
-                        <i class="fa-solid fa-phone text-brand"></i>
-                        <span>9347567746</span>
-                    </a>
-                    <a href="https://wa.me/919347567746" target="_blank" rel="noopener noreferrer" class="hover:text-emerald transition-colors flex items-center gap-2">
-                        <i class="fa-brands fa-whatsapp text-emerald"></i>
-                        <span>WhatsApp</span>
-                    </a>
-                    <a href="mailto:saibabukarri25@gmail.com" class="hover:text-white transition-colors flex items-center gap-2">
-                        <i class="fa-solid fa-envelope text-indigo-400"></i>
-                        <span>saibabukarri25@gmail.com</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-                <div>&copy; 2026 Sai Babu Karri. Built with precision in Visakhapatnam.</div>
-                <div class="flex gap-5">
-                    <a href="#why-me" class="hover:text-slate-300">About</a>
-                    <a href="#portfolio" class="hover:text-slate-300">Demos</a>
-                    <a href="#packages" class="hover:text-slate-300">Packages</a>
-                    <a href="#contact" class="hover:text-slate-300">Contact</a>
-                </div>
-            </div>
+            <p class="text-xs text-slate-500 pt-8 border-t border-white/5">© 2026 Sai Babu Karri. All rights reserved. Visakhapatnam, Andhra Pradesh.</p>
         </div>
     </footer>
 
-    <!-- Interactive Demo Preview Modal -->
-    <div id="demo-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
-        <div onclick="closeDemoModal()" class="absolute inset-0 bg-navy-950/75 backdrop-blur-sm"></div>
-        <div class="relative bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 z-10 space-y-5">
-            <div class="flex items-start justify-between gap-4">
+    <!-- Package Enquiry Modal -->
+    <div id="enquiry-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm hidden">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 w-11/12 max-w-md shadow-2xl relative border border-slate-100">
+            <!-- Close Button -->
+            <button onclick="closeEnquiryModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 text-lg w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center transition-colors" aria-label="Close modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="mb-6">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand">Quick Connect</span>
+                <h3 id="modal-package-title" class="font-display text-xl sm:text-2xl font-extrabold text-slate-900 mt-1">Package Enquiry</h3>
+                <p class="text-xs sm:text-sm text-slate-600 mt-1">Fill out your details below to instantly send your request via WhatsApp.</p>
+            </div>
+
+            <form id="whatsapp-enquiry-form" onsubmit="submitEnquiryToWhatsApp(event)" class="space-y-4">
                 <div>
-                    <span id="modal-tag" class="text-[11px] font-bold uppercase tracking-wider text-brand bg-brand-soft px-3 py-1 rounded-full">Demo Preview</span>
-                    <h3 id="modal-title" class="font-display text-2xl font-bold text-slate-900 mt-2">Project Title</h3>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1.5">Your Full Name</label>
+                    <input type="text" id="enquiry-name" required placeholder="e.g. Rajesh Kumar" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand text-sm text-slate-800 bg-slate-50">
                 </div>
-                <button onclick="closeDemoModal()" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center">
-                    <i class="fa-solid fa-xmark"></i>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1.5">Your WhatsApp Number</label>
+                    <div class="flex items-center rounded-xl border border-slate-200 overflow-hidden bg-slate-50 focus-within:ring-2 focus-within:ring-brand">
+                        <span class="px-3.5 text-slate-500 text-sm font-medium border-r border-slate-200 bg-slate-100 py-3">+91</span>
+                        <input type="tel" id="enquiry-phone" required pattern="[0-9]{10}" placeholder="9347567746" class="w-full px-4 py-3 focus:outline-none text-sm text-slate-800 bg-transparent">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1.5">Project Details (Optional)</label>
+                    <textarea id="enquiry-notes" rows="3" placeholder="Tell me a bit about your business or requirements..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand text-sm text-slate-800 bg-slate-50 resize-none"></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-4 px-5 rounded-xl bg-emerald hover:bg-emerald-dark text-white font-semibold text-sm shadow-lg shadow-emerald/20 transition-all flex items-center justify-center gap-2 mt-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Submit Inquiry via WhatsApp</span>
                 </button>
-            </div>
-            <img id="modal-img" src="" alt="Project Preview" class="w-full h-52 object-cover rounded-2xl border border-slate-100">
-            <p id="modal-desc" class="text-sm text-slate-600 leading-relaxed"></p>
-            <div id="modal-features" class="flex flex-wrap gap-2"></div>
-            <div class="pt-3 flex flex-wrap gap-3">
-                <button id="modal-request-btn" class="flex-1 bg-brand hover:bg-brand-hover text-white font-semibold py-3.5 px-5 rounded-xl text-sm transition-colors">
-                    Request Similar Website
-                </button>
-                <button onclick="closeDemoModal()" class="px-5 py-3.5 rounded-xl border border-slate-200 text-slate-700 font-semibold text-sm hover:bg-slate-50">
-                    Close
-                </button>
-            </div>
+            </form>
         </div>
     </div>
 
-    <!-- JavaScript Logic -->
+    <!-- JavaScript Handling Portfolio Demos & WhatsApp Modal -->
     <script>
-        const portfolioProjects = [
-            {
-                id: 1,
-                title: "Red Velvet Bakery & Restaurant",
-                location: "Marripalem, Visakhapatnam",
-                category: "restaurant",
-                categoryLabel: "Restaurants & Retail",
-                suggestedCategory: "Restaurant / Cafe / Bakery",
-                suggestedPackage: "Starter Landing Page (₹6,000 – ₹9,000)",
-                summary: "Modern restaurant landing page with interactive menu filtering, WhatsApp/inquiry order list builder, Google review breakdown (4.2 ★), and embedded directions map.",
-                features: ["Interactive Menu Filter", "Order List Drawer", "Google Maps & Reviews", "Mobile-First UI"],
-                img: "https://images.unsplash.com/photo-1586788680434-30d324b2d46f?auto=format&fit=crop&w=800&q=80"
-            },
-            {
-                id: 2,
-                title: "Bharati English Medium School",
-                location: "Visakhapatnam",
-                category: "school",
-                categoryLabel: "Schools & Institutions",
-                suggestedCategory: "School / Coaching Institute",
-                suggestedPackage: "Business Pro – 5 Pages (₹12,000 – ₹18,000)",
-                summary: "Responsive institutional web platform featuring admissions inquiry routing, academic highlights, campus photo gallery, and parent-friendly mobile navigation.",
-                features: ["Admissions Lead Form", "Academic Showcase", "Campus Gallery", "Fast Mobile Speed"],
-                img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80"
-            },
-            {
-                id: 3,
-                title: "AI-Powered Educational & Business Assistant",
-                location: "Custom Web & Python Solution",
-                category: "ai",
-                categoryLabel: "Custom & AI",
-                suggestedCategory: "Custom Web App / Other",
-                suggestedPackage: "Growth + Custom / AI Add-On (₹20,000 – ₹28,000)",
-                summary: "Smart inquiry and Q&A automation workflow built with Python, NLP, LLM APIs, and a clean web frontend to answer customer or student queries 24/7.",
-                features: ["Python & LLM Integration", "Automated FAQ Workflow", "Clean Web Interface", "Lead Capture"],
-                img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80"
-            }
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Portfolio Demos Data & Filter logic
+        const demos = [
+            { title: "Gourmet Restaurant & Bar", category: "restaurant", desc: "Interactive menu, table reservations, and direct WhatsApp order placement.", image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" },
+            { title: "Modern School Portal", category: "school", desc: "Admissions inquiry form, notice board, faculty showcase, and photo gallery.", image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=600&q=80" },
+            { title: "AI Workflow Assistant", category: "ai", desc: "Smart customer support chatbot integration with automated lead qualification.", image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" }
         ];
 
-        function renderPortfolio(filter = 'all') {
+        function renderDemos(filter = 'all') {
             const grid = document.getElementById('portfolio-grid');
-            const items = filter === 'all' ? portfolioProjects : portfolioProjects.filter(p => p.category === filter);
-
-            grid.innerHTML = items.map(project => `
-                <div class="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm card-lift flex flex-col">
-                    <div class="relative aspect-[16/10] bg-slate-200 overflow-hidden">
-                        <img 
-                            src="${project.img}" 
-                            onerror="this.src='https://placehold.co/800x500/0B1120/FFFFFF?text=${encodeURIComponent(project.title)}'"
-                            alt="${project.title}" 
-                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                        >
-                        <span class="absolute top-3 left-3 bg-navy-900/90 backdrop-blur text-white text-[11px] font-semibold px-3 py-1 rounded-full">
-                            ${project.categoryLabel}
-                        </span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="text-xs font-medium text-brand mb-1">${project.location}</div>
-                            <h3 class="font-display text-xl font-bold text-slate-900">${project.title}</h3>
-                            <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">${project.summary}</p>
-                            <div class="flex flex-wrap gap-1.5 mt-4">
-                                ${project.features.map(f => `<span class="text-[11px] font-medium bg-white border border-slate-200 text-slate-600 px-2.5 py-1 rounded-lg">${f}</span>`).join('')}
-                            </div>
+            grid.innerHTML = '';
+            
+            const filtered = filter === 'all' ? demos : demos.filter(d => d.category === filter);
+            
+            filtered.forEach(demo => {
+                const card = document.createElement('div');
+                card.className = "bg-slate-50 rounded-3xl overflow-hidden border border-slate-200/80 shadow-sm card-lift flex flex-col justify-between";
+                card.innerHTML = `
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="${demo.image}" alt="${demo.title}" class="w-full h-full object-cover">
                         </div>
-                        <div class="pt-5 mt-5 border-t border-slate-200/80 flex items-center gap-2.5">
-                            <button onclick="openDemoModal(${project.id})" class="flex-1 py-2.5 px-3.5 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-slate-800 font-semibold text-xs transition-colors">
-                                Preview Details
-                            </button>
-                            <button onclick="requestSimilar(${project.id})" class="flex-1 py-2.5 px-3.5 rounded-xl bg-brand hover:bg-brand-hover text-white font-semibold text-xs transition-colors">
-                                Request Similar
-                            </button>
+                        <div class="p-6">
+                            <h3 class="font-display text-xl font-bold text-slate-900 mb-2">${demo.title}</h3>
+                            <p class="text-sm text-slate-600">${demo.desc}</p>
                         </div>
                     </div>
-                </div>
-            `).join('');
+                    <div class="p-6 pt-0">
+                        <a href="https://wa.me/919347567746?text=Hi%20Sai%20Babu%2C%20I%20saw%20your%20demo%20for%20${encodeURIComponent(demo.title)}%20and%20want%20something%20similar." target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-brand hover:text-brand-hover">
+                            <span>Request Similar Demo</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
         }
 
         function filterDemos(category) {
-            document.querySelectorAll('.demo-tab').forEach(btn => {
-                if (btn.dataset.filter === category) {
-                    btn.classList.remove('bg-slate-100', 'text-slate-700');
-                    btn.classList.add('bg-navy-900', 'text-white', 'shadow-sm');
+            document.querySelectorAll('.demo-tab').forEach(tab => {
+                if(tab.dataset.filter === category) {
+                    tab.className = "demo-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-navy-900 text-white shadow-sm transition-all";
                 } else {
-                    btn.classList.remove('bg-navy-900', 'text-white', 'shadow-sm');
-                    btn.classList.add('bg-slate-100', 'text-slate-700');
+                    tab.className = "demo-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all";
                 }
             });
-            renderPortfolio(category);
+            renderDemos(category);
         }
 
-        function openDemoModal(id) {
-            const project = portfolioProjects.find(p => p.id === id);
-            if (!project) return;
+        // Initialize Demos on load
+        renderDemos('all');
 
-            document.getElementById('modal-tag').textContent = project.categoryLabel;
-            document.getElementById('modal-title').textContent = project.title;
-            document.getElementById('modal-img').src = project.img;
-            document.getElementById('modal-desc').textContent = project.summary;
-            document.getElementById('modal-features').innerHTML = project.features.map(f => 
-                `<span class="text-xs font-semibold bg-slate-100 text-slate-700 px-3 py-1.5 rounded-xl">${f}</span>`
-            ).join('');
+        // WhatsApp Modal Logic
+        let selectedPackageName = '';
 
-            document.getElementById('modal-request-btn').onclick = () => {
-                closeDemoModal();
-                requestSimilar(id);
-            };
-
-            document.getElementById('demo-modal').classList.remove('hidden');
+        function openEnquiryModal(packageName) {
+            selectedPackageName = packageName;
+            document.getElementById('modal-package-title').innerText = 'Enquire about: ' + packageName;
+            document.getElementById('enquiry-modal').classList.remove('hidden');
         }
 
-        function closeDemoModal() {
-            document.getElementById('demo-modal').classList.add('hidden');
+        function closeEnquiryModal() {
+            document.getElementById('enquiry-modal').classList.add('hidden');
         }
 
-        function requestSimilar(id) {
-            const project = portfolioProjects.find(p => p.id === id);
-            if (!project) return;
-
-            document.getElementById('business-category').value = project.suggestedCategory;
-            document.getElementById('selected-package').value = project.suggestedPackage;
-            document.getElementById('project-message').value = `Hi Sai Babu, I liked the "${project.title}" demo and would like a similar website for my business.`;
+        function submitEnquiryToWhatsApp(event) {
+            event.preventDefault();
             
-            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-            showToast(`Pre-filled inquiry based on "${project.title}"`);
+            const name = document.getElementById('enquiry-name').value.trim();
+            const phone = document.getElementById('enquiry-phone').value.trim();
+            const notes = document.getElementById('enquiry-notes').value.trim();
+
+            let message = `Hi Sai Babu, I'm interested in the *${selectedPackageName}* package.\n\n`;
+            message += `*Name:* ${name}\n`;
+            message += `*WhatsApp:* +91 ${phone}\n`;
+            if (notes) {
+                message += `*Details:* ${notes}`;
+            }
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/919347567746?text=${encodedMessage}`;
+
+            window.open(whatsappUrl, '_blank');
+            closeEnquiryModal();
+            document.getElementById('whatsapp-enquiry-form').reset();
         }
 
-        function selectPackage(packageName) {
-            document.getElementById('selected-package').value = packageName;
-            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-            showToast(`Selected: ${packageName}`);
-        }
-
-        function getFormValues() {
-            return {
-                business: document.getElementById('business-name').value.trim() || 'Not specified',
-                person: document.getElementById('contact-person').value.trim() || 'Prospective Client',
-                phone: document.getElementById('contact-phone').value.trim() || 'Not provided',
-                category: document.getElementById('business-category').value,
-                pkg: document.getElementById('selected-package').value,
-                message: document.getElementById('project-message').value.trim() || 'Looking for a modern website.'
-            };
-        }
-
-        function sendWhatsAppInquiry() {
-            const data = getFormValues();
-            const text = `Hello Sai Babu Karri, I would like to request a website quote:\n\n` +
-                `• *Business:* ${data.business}\n` +
-                `• *Contact Person:* ${data.person}\n` +
-                `• *Phone:* ${data.phone}\n` +
-                `• *Category:* ${data.category}\n` +
-                `• *Package:* ${data.pkg}\n` +
-                `• *Details:* ${data.message}`;
-
-            const waUrl = `https://wa.me/919347567746?text=${encodeURIComponent(text)}`;
-            showToast('Opening WhatsApp with your formatted inquiry...');
-            window.open(waUrl, '_blank', 'noopener,noreferrer');
-        }
-
-        function sendEmailInquiry() {
-            const data = getFormValues();
-            const subject = `Website Inquiry: ${data.business} (${data.pkg})`;
-            const body = `Hi Sai Babu Karri,\n\nI would like to discuss a website project for my business:\n\n` +
-                `Business Name: ${data.business}\n` +
-                `Contact Person: ${data.person}\n` +
-                `Phone / WhatsApp: ${data.phone}\n` +
-                `Category: ${data.category}\n` +
-                `Selected Package: ${data.pkg}\n` +
-                `Project Details: ${data.message}\n\n` +
-                `Best regards,\n${data.person}`;
-
-            const mailtoUrl = `mailto:saibabukarri25@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            showToast('Opening your email client with the quote request...');
-            window.location.href = mailtoUrl;
-        }
-
-        function toggleMobileMenu() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        }
-
-        function showToast(message) {
-            const container = document.getElementById('toast-container');
-            const toast = document.createElement('div');
-            toast.className = 'bg-navy-900 text-white text-xs sm:text-sm font-medium px-4 py-3.5 rounded-2xl shadow-xl border border-white/15 flex items-center gap-2.5 transition-all duration-300 transform translate-y-2 opacity-0';
-            toast.innerHTML = `<i class="fa-solid fa-circle-check text-emerald"></i> <span>${message}</span>`;
-            container.appendChild(toast);
-
-            requestAnimationFrame(() => {
-                toast.classList.remove('translate-y-2', 'opacity-0');
-            });
-
-            setTimeout(() => {
-                toast.classList.add('opacity-0', 'translate-y-2');
-                setTimeout(() => toast.remove(), 300);
-            }, 3200);
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            renderPortfolio('all');
+        document.getElementById('enquiry-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeEnquiryModal();
+            }
         });
     </script>
 </body>
